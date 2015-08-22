@@ -8,6 +8,7 @@ Part 1: A Guided Tour
     + `composer create-project`
     + `laravel new`
 2. Basic application structure
+    + Environment & config
 3. Routing & Controllers
     + Basics
         * HTTP methods

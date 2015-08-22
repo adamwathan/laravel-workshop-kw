@@ -1,8 +1,35 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+$brand-primary: rgb(48, 151, 209);
+$btn-primary-border: $brand-primary;
+$font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+    background: rgb(245, 248, 250);
+}
 
 .container {
     max-width: 970px;
 }
+
+.navbar-default {
+     background-color: rgb(48, 151, 209);
+     border-color: rgb(28, 115, 165);
+
+    .navbar-brand {
+        color: rgb(255, 255, 255);
+        &:hover, &:focus, &:focus:hover {
+            color: rgb(255, 255, 255);
+        }
+    }
+    .navbar-nav>li>a {
+        color: rgba(255, 255, 255, 0.8);
+        &:hover, &:focus, &:focus:hover {
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+
 .u-mt-0 {
     margin-top: 0;
 }
