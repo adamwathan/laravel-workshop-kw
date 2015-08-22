@@ -66,7 +66,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function follows($user)
     {
-        return $this->following()->find($user->id) !== null;
+        return $this->following->contains($user);
     }
 
     public function notFollowing()
