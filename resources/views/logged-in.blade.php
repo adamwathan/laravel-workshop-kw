@@ -7,6 +7,7 @@
             @yield('content')
         </div>
         <div class="col-sm-5">
+            @include('partials.user-profile')
             @include('partials.who-to-follow')
         </div>
     </div>

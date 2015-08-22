@@ -6,7 +6,7 @@
                 @foreach ($users as $user)
                 <li class="list-group-item flex-justified">
                     <div>
-                        {{ $user->username }}
+                        {{ '@' . $user->username }}
                     </div>
                     @if (Auth::user()->follows($user))
                     <form action="/following/{{ $user->username }}" method="POST">

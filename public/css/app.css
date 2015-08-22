@@ -1,6 +1,9 @@
 .container {
   max-width: 970px; }
 
+.u-mt-0 {
+  margin-top: 0; }
+
 .flex-justified {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,5 +14,11 @@
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between; }
+
+.stat {
+  text-align: center; }
+
+.stat-value {
+  font-size: 1.5em; }
 
 /*# sourceMappingURL=app.css.map */

@@ -24,7 +24,6 @@
                 @if (Auth::guest())
                 <li><a href="/sign-in">Sign in</a></li>
                 @else
-                <li><p class="navbar-text">Hi {{ Auth::user()->username }}!</p></li>
                 <li><a href="/logout">Logout</a></li>
                 @endif
               </ul>
