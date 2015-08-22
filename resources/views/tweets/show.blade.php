@@ -1,9 +1,11 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div>
+    <h5 class="u-mt-0">
         <strong>{{ '@' . $tweet->user->username }}</strong>
-        {{ $tweet->created_at->diffForHumans() }}
-    </div>
-    <div class="panel-body">
+        <small>
+            {{ $tweet->created_at->diffForHumans() }}
+        </small>
+    </h5>
+    <div>
         {{ $tweet->message }}
     </div>
 </div>

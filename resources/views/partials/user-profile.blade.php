@@ -1,4 +1,4 @@
-<div class="panel panel-info">
+<div class="panel panel-default">
     <div class="panel-heading text-center">
         <h4>{{ '@' . Auth::user()->username }}</h4>
     </div>

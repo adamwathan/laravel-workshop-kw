@@ -18,7 +18,7 @@ class TweetsController extends Controller
      */
     public function index()
     {
-        $tweets = Auth::user()->tweets()->paginate(20);
+        $tweets = Auth::user()->tweets()->latest()->paginate(20);
 
         return view('tweets.index', [
             'tweets' => $tweets,

@@ -1,9 +1,15 @@
 @extends('logged-in')
 
 @section('content')
-    @include('tweets.create')
+<ul class="list-group">
+    <li class="list-group-item list-group-item-lg">
+        @include('tweets.create')
+    </li>
     @foreach ($tweets as $tweet)
-        @include('tweets.show', ['tweet' => $tweet])
+        <li class="list-group-item list-group-item-lg">
+            @include('tweets.show', ['tweet' => $tweet])
+        </li>
     @endforeach
-    {!! $tweets->render() !!}
+</ul>
+{!! $tweets->render() !!}
 @endsection
