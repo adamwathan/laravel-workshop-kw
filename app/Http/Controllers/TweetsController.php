@@ -7,7 +7,7 @@ use App\Http\Requests;
 use App\Tweet;
 use App\User;
 use Auth;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 
 class TweetsController extends Controller
 {
@@ -18,12 +18,10 @@ class TweetsController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $tweets = Auth::user()->timeline()->paginate(20);
+        $tweets = Auth::user()->tweets()->paginate(20);
 
         return view('tweets.index', [
             'tweets' => $tweets,
-            'users' => $users,
         ]);
     }
 
@@ -33,27 +31,14 @@ class TweetsController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store()
     {
+        $this->validate(Request::instance(), ['tweet' => ['required', 'max:141']]);
+
         Auth::user()->tweets()->create([
             'message' => $request->input('tweet'),
         ]);
 
-        return redirect('tweets');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        $tweet = Tweet::findOrFail($id);
-
-        return view('tweets.show', [
-            'tweet' => $tweet,
-        ]);
+        return redirect()->back();
     }
 }

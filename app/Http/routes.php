@@ -24,9 +24,13 @@ Route::post('sign-in', 'AuthController@postSignIn');
 Route::any('logout', 'AuthController@logout');
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('timeline', 'TimelineController@index');
     Route::get('tweets', 'TweetsController@index');
     Route::post('tweets', 'TweetsController@store');
 
-    Route::post('following', 'UserFollowingController@store');
-    Route::delete('following/{username}', 'UserFollowingController@destroy');
+    Route::get('followers', 'FollowersController@index');
+
+    Route::get('following', 'FollowingController@index');
+    Route::post('following', 'FollowingController@store');
+    Route::delete('following/{username}', 'FollowingController@destroy');
 });

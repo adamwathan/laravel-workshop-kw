@@ -5,34 +5,34 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-xs-4">
-                <div class="stat">
+                <a href="/tweets" class="stat">
                     <div class="stat-value">
-                        214
+                        {{ $tweetCount }}
                     </div>
                     <div class="stat-label">
-                        Tweets
+                        {{ str_plural('Tweet', $tweetCount) }}
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-4">
-                <div class="stat">
+                <a href="/followers" class="stat">
                     <div class="stat-value">
-                        645
+                        {{ $followerCount }}
                     </div>
                     <div class="stat-label">
-                        Followers
+                        {{ str_plural('Follower', $followerCount) }}
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-xs-4">
-                <div class="stat">
+                <a href="/following" class="stat">
                     <div class="stat-value">
-                        186
+                        {{ $followingCount }}
                     </div>
                     <div class="stat-label">
                         Following
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

@@ -4,6 +4,9 @@
 .u-mt-0 {
   margin-top: 0; }
 
+.u-mb-0 {
+  margin-bottom: 0; }
+
 .flex-justified {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16,6 +19,7 @@
   justify-content: space-between; }
 
 .stat {
+  display: block;
   text-align: center; }
 
 .stat-value {

@@ -16,6 +16,6 @@ class HomeController extends Controller
             return view('welcome');
         }
 
-        return redirect('/tweets');
+        return redirect('/timeline');
     }
 }

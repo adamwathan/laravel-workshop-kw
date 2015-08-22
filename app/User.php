@@ -56,11 +56,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function follow($user)
     {
+        if ($this->follows($user)) {
+            return;
+        }
         $this->following()->attach($user);
     }
 
     public function unfollow($user)
     {
+        if (! $this->follows($user)) {
+            return;
+        }
         $this->following()->detach($user);
     }
 
@@ -71,7 +77,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function notFollowing()
     {
-        $following_ids = $this->following()->lists('following_id');
+        $following_ids = $this->following()->lists('following_id')->push($this->id);
         return User::whereNotIn('id', $following_ids);
     }
 }

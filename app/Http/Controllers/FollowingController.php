@@ -8,8 +8,22 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserFollowingController extends Controller
+class FollowingController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $users = Auth::user()->following;
+
+        return view('following.index', [
+            'users' => $users,
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -28,7 +42,9 @@ class UserFollowingController extends Controller
     public function destroy($username)
     {
         $user_to_unfollow = User::where('username', $username)->firstOrFail();
+
         Auth::user()->unfollow($user_to_unfollow);
+
         return redirect('/tweets');
     }
 }

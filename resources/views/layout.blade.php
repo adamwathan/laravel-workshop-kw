@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Tweeter</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
@@ -24,6 +24,7 @@
                 @if (Auth::guest())
                 <li><a href="/sign-in">Sign in</a></li>
                 @else
+                <li><a href="/timeline">Home</a></li>
                 <li><a href="/logout">Logout</a></li>
                 @endif
               </ul>

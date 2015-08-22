@@ -78,7 +78,8 @@ Part 1: A Guided Tour
 Part 2: Building Some Features
 ------------------------------
 
-1. Creating a new tweet
+1. Registration and sign in
+2. Creating a new tweet
     + CSRF
     + Validation
         * Defining rules
@@ -87,14 +88,15 @@ Part 2: Building Some Features
     + Saving related model
     + Mass assignment
     + Flashing messages ("Your tweet was posted!")
-2. Following and unfollowing users
+    + Show all tweets in system for now (not just who you follow)
+3. Following and unfollowing users
     + Random list of users in the sidebar
     + Complex belongs to many relationship
     + Following and Followers pages
     + Followed button state
     + Adding the follow
     + Unfollowing
-3. Showing your timeline
+4. Showing your timeline
     + whereIn stuff
     + Query counting and eager loading
     + Pagination
