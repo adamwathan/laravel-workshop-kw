@@ -7,7 +7,7 @@
                 <textarea class="form-control" name="tweet" rows="3"></textarea>
             </div>
             <div class="text-right">
-                <button class="btn btn-primary">Tweet</button>
+                <button class="btn btn-primary btn-block">Tweet</button>
             </div>
         </form>
     </div>
