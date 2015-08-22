@@ -24,24 +24,18 @@ class AuthController extends Controller
 
     public function postSignIn(Request $request)
     {
-        $rules = [
+        $this->validate($request, [
             'username' => ['required'],
             'password' => ['required'],
-        ];
-
-        $validation = Validator::make($request->all(), $rules);
-
-        if ($validation->fails()) {
-            return redirect()->back()->withInput()->withErrors($validation);
-        }
-
-        if (Auth::attempt($request->only('username', 'password'))) {
-            return redirect('/');
-        }
-
-        return redirect()->back()->withInput()->withErrors([
-            'auth' => ['Invalid credentials.'],
         ]);
+
+        if (! Auth::attempt($request->only('username', 'password'))) {
+            return redirect()->back()->withInput()->withErrors([
+                'auth' => ['Invalid credentials.'],
+            ]);
+        }
+
+        return redirect('/');
     }
 
     public function postSignUp(Request $request)
