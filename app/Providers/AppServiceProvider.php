@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('partials.who-to-follow', function ($view) {
-            $users = User::where('id', '<>', Auth::user()->id)->latest()->limit(10)->get();
+            $users = User::where('id', '<>', Auth::user()->id)->latest()->limit(5)->get();
             $view->with('users', $users);
         });
     }
