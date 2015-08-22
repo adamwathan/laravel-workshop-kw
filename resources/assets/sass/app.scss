@@ -1,2 +1,10 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+.container {
+    max-width: 970px;
+}
+.flex-justified {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

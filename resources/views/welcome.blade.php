@@ -1,9 +1,17 @@
 @extends('layout')
 
-@section('content')
+@section('body')
 <div class="container">
-    <h1>
-        Welcome to Tweeter!
-    </h1>
+    <div class="row">
+        <div class="col col-sm-8 col-sm-offset-2">
+            <div class="jumbotron text-center">
+                <h1>
+                    Tweeter
+                </h1>
+                <p>Our tweets go to 141.</p>
+                <a href="/sign-up" class="btn btn-success btn-lg">Create an account</a>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

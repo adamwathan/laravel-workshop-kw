@@ -50,7 +50,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function timeline()
     {
-        $following_ids = $this->following()->lists('following_id');
+        $following_ids = $this->following()->lists('following_id')->push($this->id);
         return Tweet::whereIn('user_id', $following_ids)->latest();
     }
 
