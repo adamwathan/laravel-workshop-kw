@@ -5,8 +5,7 @@
     <li class="list-group-item list-group-item-lg">
         <h4 class="u-mt-0 u-mb-0">Following</h4>
     </li>
-    @if ($users->count() > 0)
-        @foreach ($users as $user)
+    @forelse ($users as $user)
         <li class="list-group-item list-group-item-lg-short flex-justified">
             <div>
                 <strong>{{ '@' . $user->username }}</strong>
@@ -17,11 +16,10 @@
                 <button type="submit" href="#" class="btn btn-sm btn-danger">Unfollow</button>
             </form>
         </li>
-        @endforeach
-    @else
-        <div class="text-center">
+    @empty
+        <li class="list-group-item text-center">
             Yikes, it looks like you aren't following anyone yet!
-        </div>
-    @endif
+        </li>
+    @endforelse
 </ul>
 @endsection

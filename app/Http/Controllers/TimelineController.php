@@ -18,7 +18,7 @@ class TimelineController extends Controller
      */
     public function index()
     {
-        $tweets = Auth::user()->timeline()->paginate(20);
+        $tweets = Tweet::paginate(20);
 
         return view('timeline.index', [
             'tweets' => $tweets,

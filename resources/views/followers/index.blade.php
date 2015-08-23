@@ -5,16 +5,14 @@
     <li class="list-group-item list-group-item-lg">
         <h4 class="u-mt-0 u-mb-0">Followers</h4>
     </li>
-    @if ($users->count() > 0)
-        @foreach ($users as $user)
+    @forelse ($users as $user)
         <li class="list-group-item list-group-item-lg">
             <strong>{{ '@' . $user->username }}</strong>
         </li>
-        @endforeach
-    @else
-        <div class="text-center">
+    @empty
+        <li class="list-group-item text-center">
             Yikes, it looks like you don't have any followers yet!
-        </div>
-    @endif
+        </li>
+    @endforelse
 </ul>
 @endsection
