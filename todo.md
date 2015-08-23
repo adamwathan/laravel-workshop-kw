@@ -7,3 +7,4 @@ To Do
     + if so, probably skip it in the overview, rely on the feature portion
 - Read up on events and queues and mail
 - Break the app up into logical checkpoints
+- Home/register/login styling
