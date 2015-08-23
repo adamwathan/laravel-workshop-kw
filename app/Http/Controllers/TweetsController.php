@@ -36,7 +36,7 @@ class TweetsController extends Controller
         $this->validate(Request::instance(), ['tweet' => ['required', 'max:141']]);
 
         Auth::user()->tweets()->create([
-            'message' => $request->input('tweet'),
+            'message' => Request::input('tweet'),
         ]);
 
         return redirect()->back();
