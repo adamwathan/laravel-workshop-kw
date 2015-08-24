@@ -6010,6 +6010,10 @@ body {
   padding-left: 2em;
   padding-right: 2em; }
 
+.list-group-heading > {
+  margin-top: 0;
+  margin-bottom: 0; }
+
 .list-group-item-lg {
   padding: 1.42857em; }
 

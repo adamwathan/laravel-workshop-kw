@@ -16,16 +16,13 @@
                     @endif
 
                     <form action="/sign-in" method="POST">
-                        {!! csrf_field() !!}
-                        <div class="form-group {{ $errors->first('username', 'has-error') }}">
+                        <div class="form-group">
                             <label class="control-label">Username</label>
-                            <input type="text" class="form-control" name="username" value="{{ old('username') }}">
-                            {!! $errors->first('username', '<p class="help-block">:message</p>') !!}
+                            <input type="text" class="form-control" name="username">
                         </div>
-                        <div class="form-group {{ $errors->first('password', 'has-error') }}">
+                        <div class="form-group">
                             <label class="control-label">Password</label>
                             <input type="password" class="form-control" name="password">
-                            {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Sign in</button>
                     </form>
