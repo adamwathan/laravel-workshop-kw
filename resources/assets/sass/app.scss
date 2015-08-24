@@ -1,6 +1,8 @@
 $font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $brand-primary: rgb(48, 151, 209);
+$brand-danger: rgb(170, 74, 36);
+
 $btn-primary-border: rgb(42, 136, 189);
 
 $panel-default-border: rgb(211, 224, 233);
@@ -47,8 +49,11 @@ body {
 }
 
 .panel-default > .panel-heading {
-    border-bottom: none;
     background-color: inherit;
+}
+
+.panel-heading-no-border {
+    border-bottom: none;
 }
 
 .navbar-default {

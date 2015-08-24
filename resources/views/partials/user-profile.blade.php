@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    <div class="panel-heading text-center">
+    <div class="panel-heading panel-heading-no-border text-center">
         <h4>{{ '@' . Auth::user()->username }}</h4>
     </div>
     <div class="panel-body">

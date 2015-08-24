@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::guest()) {
-            return view('welcome2');
+            return view('welcome');
         }
 
         return redirect('/timeline');
