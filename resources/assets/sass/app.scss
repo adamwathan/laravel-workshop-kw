@@ -79,6 +79,17 @@ body {
             color: rgb(255, 255, 255);
         }
     }
+    .navbar-toggle .icon-bar {
+        background-color: rgba(255, 255, 255, 0.8);
+        &:hover, &:focus, &:active, &:focus:hover, &:active:focus, &:active:hover {
+            background-color: rgb(255, 255, 255);
+        }
+    }
+    .navbar-toggle {
+        &:hover, &:focus, &:active, &:focus:hover, &:active:focus, &:active:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
 }
 
 .u-mt-0 {

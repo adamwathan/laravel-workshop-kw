@@ -6038,6 +6038,12 @@ body {
     color: rgba(255, 255, 255, 0.8); }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:focus:hover, .navbar-default .navbar-nav > li > a:active:focus, .navbar-default .navbar-nav > li > a:active:hover {
       color: white; }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: rgba(255, 255, 255, 0.8); }
+    .navbar-default .navbar-toggle .icon-bar:hover, .navbar-default .navbar-toggle .icon-bar:focus, .navbar-default .navbar-toggle .icon-bar:active, .navbar-default .navbar-toggle .icon-bar:focus:hover, .navbar-default .navbar-toggle .icon-bar:active:focus, .navbar-default .navbar-toggle .icon-bar:active:hover {
+      background-color: white; }
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:active, .navbar-default .navbar-toggle:focus:hover, .navbar-default .navbar-toggle:active:focus, .navbar-default .navbar-toggle:active:hover {
+    background-color: rgba(255, 255, 255, 0.2); }
 
 .u-mt-0 {
   margin-top: 0; }
