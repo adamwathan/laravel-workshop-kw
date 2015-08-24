@@ -9,7 +9,7 @@
                     Tweeter
                 </h1>
                 <p>Our tweets go to 141.</p>
-                <a href="/sign-up" class="btn btn-success btn-lg">Create an account</a>
+                <a href="/sign-up" class="btn btn-primary btn-lg">Create an account</a>
             </div>
         </div>
     </div>

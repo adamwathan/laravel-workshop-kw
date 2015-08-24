@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Tweeter</title>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:500,400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
