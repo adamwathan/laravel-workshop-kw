@@ -50,13 +50,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function timeline()
     {
-        $following_ids = $this->following()->lists('following_id')->push($this->id);
-        return Tweet::whereIn('user_id', $following_ids)->latest();
+        return Tweet::whereHas('user',function($query){
+            $query->where(function($query2){
+                $query2->has('followers')
+                       ->where('id', '=', $this->id,'or');
+            });
+
+        })->latest();
     }
 
     public function follow($user)
     {
-        if ($this->follows($user)) {
+        if ($this->follows()->get()->contains($user)) {
             return;
         }
         $this->following()->attach($user);
@@ -64,20 +69,25 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function unfollow($user)
     {
-        if (! $this->follows($user)) {
+        if (!$this->follows()->get()->contains($user)) {
             return;
         }
         $this->following()->detach($user);
     }
 
-    public function follows($user)
+    public function scopeFollows($query)
     {
-        return $this->following->contains($user);
+        return $query->whereHas('followers',function($query) {
+            return $query->whereFollowerId($this->id);
+        })
+            ->where('id', '<>', $this->id);;
     }
 
-    public function notFollowing()
+    public function scopeNotFollowing($query)
     {
-        $following_ids = $this->following()->lists('following_id')->push($this->id);
-        return User::whereNotIn('id', $following_ids);
+        return $query->whereDoesntHave('followers',function($query) {
+            return $query->whereFollowerId($this->id);
+        })
+            ->where('id', '<>', $this->id);
     }
 }
